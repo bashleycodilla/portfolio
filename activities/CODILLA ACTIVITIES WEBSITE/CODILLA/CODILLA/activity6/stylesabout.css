@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FAF8F3;
+}
+
+.about-container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+.story {
+    width: 65%; 
+}
+
+.story h3 {
+    color: #C23A2B;
+    border-left: 4px solid #FBBF24;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.story p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.founder-card {
+    width: 30%; 
+}
+
+.founder-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.founder-card h4 {
+    margin: 10px 0 5px 0;
+}
+
+.founder-card p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.map-container {
+    width: 48%;
+}
+
+.map-container h3 {
+    color: #C23A2B;
+    margin-bottom: 10px;
+}
+
+.inquiry-container {
+    width: 48%;
+}
+
+.inquiry-container h3 {
+    color: #C23A2B;
+    margin-bottom: 10px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.inquiry-form input, .inquiry-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inquiry-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.inquiry-form button {
+    background-color: #FBBF24;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.inquiry-form button:hover {
+    background-color: #C23A2B;
+}

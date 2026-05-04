@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity 4</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #5f2c82, #49a09d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            padding: 35px;
+            width: 480px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #5f2c82;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 18px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #5f2c82;
+            box-shadow: 0 0 8px rgba(73, 160, 157, 0.5);
+            outline: none;
+        }
+
+        .group {
+            margin-bottom: 18px;
+        }
+
+        .group input {
+            margin-right: 6px;
+        }
+
+        .group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .submit-btn {
+            background-color: #5f2c82;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #4a2166;
+        }
+
+        .reset-btn {
+            background-color: #49a09d;
+            color: white;
+        }
+
+        .reset-btn:hover {
+            background-color: #3b8380;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>User Information Form</h2>
+
+    <form action="" method="post">
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="firstname" required>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lastname" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+
+        <div class="group">
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+
+        <div class="group">
+            <label>Hobbies:</label><br>
+
+            <input type="checkbox" id="hobby1" name="hobby" value="Riding motorcycle">
+            <label for="hobby1">Riding Motorcycle</label><br>
+
+            <input type="checkbox" id="hobby2" name="hobby" value="Playing Games">
+            <label for="hobby2">Playing Games</label><br>
+
+            <input type="checkbox" id="hobby3" name="hobby" value="Studying">
+            <label for="hobby3">Studying</label><br>
+
+            <input type="checkbox" id="hobby4" name="hobby" value="Working out">
+            <label for="hobby4">Working out</label><br>
+
+            <input type="checkbox" id="hobby5" name="hobby" value="Sleeping">
+            <label for="hobby5">Sleeping</label><br>
+
+            <input type="checkbox" id="hobby6" name="hobby" value="Driving Cars">
+            <label for="hobby6">Driving Cars</label>
+        </div>
+
+        <label for="year-level">Year Level:</label>
+        <select id="year-level" name="year_level">
+            <option value="1st-year">1st Year</option>
+            <option value="2nd-year">2nd Year</option>
+            <option value="3rd-year">3rd Year</option>
+            <option value="4th-year">4th Year</option>
+        </select>
+
+        <div class="button-container">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Clear</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

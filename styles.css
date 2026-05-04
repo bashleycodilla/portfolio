@@ -1,0 +1,108 @@
+/* ============================================
+   styles.css — Main Layout (index.html only)
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F5F0E8; /* warm beige */
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: #2E2E2E; /* soft dark gray */
+    color: #F5F0E8;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #7DBFB0; /* muted teal */
+}
+
+.header p {
+    font-size: 16px;
+    color: #aaa;
+    margin-top: 6px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+    background-color: #2E2E2E;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 14px 0;
+    border-top: 1px solid #444;
+}
+
+.nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #7DBFB0; /* muted teal */
+}
+
+/* ===== IFRAME CONTAINER ===== */
+.main iframe {
+    width: 100%;
+    height: 900px;
+    border: none;
+    display: block;
+    background-color: #F5F0E8;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #2E2E2E;
+    color: #aaa;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+    .nav a {
+        font-size: 13px;
+    }
+    .header h1 {
+        font-size: 26px;
+    }
+    .main iframe {
+        height: 1200px;
+    }
+}
+
+
+#mainframe {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    display: block;
+}
+
+.main {
+    padding: 0;
+    overflow: hidden;
+}

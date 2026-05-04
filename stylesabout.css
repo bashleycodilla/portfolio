@@ -1,0 +1,157 @@
+/* ============================================
+   stylesabout.css — About Page
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F5F0E8;
+    color: #2E2E2E;
+}
+
+.about-wrapper {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #2E2E2E;
+    margin-bottom: 16px;
+    border-left: 5px solid #7DBFB0;
+    padding-left: 12px;
+}
+
+/* ===== PROFILE SECTION ===== */
+.profile-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Photo box */
+.photo-box {
+    flex-shrink: 0;
+}
+
+.photo-box img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;      /* keeps photo centered and cropped nicely */
+    border-radius: 12px;
+    border: 4px solid #7DBFB0;
+    display: block;
+}
+
+/* Profile text */
+.profile-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+.body-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+/* Details box (location, birthday, etc.) */
+.details-box {
+    background-color: #EDE8DC;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.label {
+    font-weight: 700;
+    color: #2E2E2E;
+    min-width: 120px;
+}
+
+/* Button */
+.btn-teal {
+    display: inline-block;
+    padding: 11px 26px;
+    background-color: #7DBFB0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    margin-top: 8px;
+}
+
+.btn-teal:hover {
+    background-color: #5FA898;
+}
+
+/* ===== BIBLE VERSE ===== */
+.bible-card {
+    background-color: #2E2E2E;
+    color: #F5F0E8;
+    border-radius: 12px;
+    padding: 30px 35px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: #7DBFB0;
+    line-height: 0.6;
+    margin-bottom: 16px;
+}
+
+.verse-text {
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.verse-ref {
+    font-size: 14px;
+    color: #7DBFB0;
+    font-weight: 700;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo-box img {
+        width: 180px;
+        height: 180px;
+    }
+    .about-wrapper {
+        width: 92%;
+    }
+}

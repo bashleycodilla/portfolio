@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="skills.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="skills-wrapper">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-section">
+
+        <div class="skills-grid">
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>C Programming</span>
+                    <span>40%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:40%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>HTML & CSS</span>
+                    <span>60%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:60%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>JavaScript</span>
+                    <span>30%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:30%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>GitHub</span>
+                    <span>50%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:50%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Valorant</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Driving Vehicles</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Badminton</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:80%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Singing</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width:80%"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fills = document.querySelectorAll('.skill-fill');
+        fills.forEach(fill => {
+            const width = fill.style.width;
+            fill.style.width = '0%';
+            setTimeout(() => fill.style.width = width, 100);
+        });
+    });
+</script>
+
+</body>
+</html>
