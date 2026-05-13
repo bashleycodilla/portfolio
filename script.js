@@ -159,3 +159,86 @@ function showStatus(message, type) {
 
 // Triggering the main function once the browser is ready
 window.addEventListener('load', main);
+
+// Activity 10 functions
+function calculate() {
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('sum').innerHTML = "Please enter valid numbers.";
+        return;
+    }
+    let sum = num1 + num2;
+    document.getElementById('sum').innerHTML = "Sum: " + sum;
+}
+
+function clearFields() {
+    document.getElementById('num1').value = '';
+    document.getElementById('num2').value = '';
+    document.getElementById('sum').innerHTML = '';
+}
+
+// Activity 11 functions
+function showFor() {
+    let count = parseInt(document.getElementById('forCount').value);
+    let text = document.getElementById('forText').value;
+    if (isNaN(count) || count <= 0) {
+        document.getElementById('forOutput').innerHTML = "Please enter a positive number.";
+        return;
+    }
+    let output = '';
+    for (let i = 1; i <= count; i++) {
+        output += text + ' ' + i + '<br>';
+    }
+    document.getElementById('forOutput').innerHTML = output;
+}
+
+function clearFor() {
+    document.getElementById('forCount').value = '';
+    document.getElementById('forText').value = '';
+    document.getElementById('forOutput').innerHTML = '';
+}
+
+function showWhile() {
+    let count = parseInt(document.getElementById('whileCount').value);
+    let text = document.getElementById('whileText').value;
+    if (isNaN(count) || count <= 0) {
+        document.getElementById('whileOutput').innerHTML = "Please enter a positive number.";
+        return;
+    }
+    let output = '';
+    let i = 1;
+    while (i <= count) {
+        output += text + ' ' + i + '<br>';
+        i++;
+    }
+    document.getElementById('whileOutput').innerHTML = output;
+}
+
+function clearWhile() {
+    document.getElementById('whileCount').value = '';
+    document.getElementById('whileText').value = '';
+    document.getElementById('whileOutput').innerHTML = '';
+}
+
+function showDoWhile() {
+    let count = parseInt(document.getElementById('dowhileCount').value);
+    let text = document.getElementById('dowhileText').value;
+    if (isNaN(count) || count <= 0) {
+        document.getElementById('dowhileOutput').innerHTML = "Please enter a positive number.";
+        return;
+    }
+    let output = '';
+    let i = 1;
+    do {
+        output += text + ' ' + i + '<br>';
+        i++;
+    } while (i <= count);
+    document.getElementById('dowhileOutput').innerHTML = output;
+}
+
+function clearDoWhile() {
+    document.getElementById('dowhileCount').value = '';
+    document.getElementById('dowhileText').value = '';
+    document.getElementById('dowhileOutput').innerHTML = '';
+}
