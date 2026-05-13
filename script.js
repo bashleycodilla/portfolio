@@ -4,108 +4,121 @@ function main() {
     initPortfolioCards();
     initTimelineCards();
 
-    //Attach submit event to form
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', sendEmail);
     }
 }
 
-//Highlight clicked navigation link
+
 function initNavHighlight() {
+ 
     const navLinks = document.querySelectorAll('.nav a');
     if (navLinks.length === 0) return;
     
+    // Adding a "click" listener to every single link
     navLinks.forEach(function (link) {
         link.addEventListener('click', function () {
-            //Remove active class from all links
+            // Removing the highlight from all other links first
             navLinks.forEach(function (l) {
                 l.classList.remove('active');
             });
-            //Add active class to clicked link
+            // Adding the highlight to the one link I just clicked
             this.classList.add('active');
         });
     });
-    //Set first link active by default
+    // Setting the first link as active by default
     navLinks[0].classList.add('active');
 }
 
-//Animate skill bars progress
+// Making the skill progress bars animate or "grow"
 function initSkillBars() {
+    // Finding every progress bar on the page
     const fills = document.querySelectorAll('.skill-fill');
     if (fills.length === 0) return;
     
     fills.forEach(function (fill) {
-        //Save target width from CSS
+        // Grabbing the percentage I set in HTML/CSS
         const targetWidth = fill.style.width;
-        //Reset to zero for animation
+        // Resetting it to 0% so it can grow
         fill.style.width = '0%';
-        //Apply target width after delay
+        // Waiting a split second before growing the bar
         setTimeout(function () {
             fill.style.width = targetWidth;
         }, 300);
     });
 }
 
-//Fade and slide up portfolio cards
+// Making project cards fade in and slide up
 function initPortfolioCards() {
     const cards = document.querySelectorAll('.portfolio-card');
     if (cards.length === 0) return;
 
     cards.forEach(function (card, index) {
-        //Hide card initially
+        // Hiding the card initially
         card.style.opacity = '0';
+        // Moving the card down 20 pixels
         card.style.transform = 'translateY(20px)';
         
-        //Reveal cards with staggered delay
+        // Creating a "staggered" reveal effect
         setTimeout(function () {
+            // Enabling the smooth movement transition
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            // Making the card visible
             card.style.opacity = '1';
+            // Moving the card back to its original position
             card.style.transform = 'translateY(0)';
         }, index * 80);
     });
 }
 
-//Slide in timeline items from left
+// Making the timeline items slide in from the left
 function initTimelineCards() {
     const cards = document.querySelectorAll('.timeline-card');
     if (cards.length === 0) return;
 
     cards.forEach(function (card, i) {
+        // Hiding the card initially
         card.style.opacity = '0';
+        // Starting the card 20 pixels to the left
         card.style.transform = 'translateX(-20px)';
         
+        // Creating a "staggered" reveal effect
         setTimeout(function () {
+            // Enabling the smooth movement transition
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            // Making the card visible
             card.style.opacity = '1';
+            // Moving the card back to its original position
             card.style.transform = 'translateX(0)';
         }, i * 120);
     });
 }
 
-//Submit form data to Formspree
+// Sending the contact form data to Formspree
 function sendEmail(event) {
-    // Prevent page reload on submit
+    // Stopping the page from refreshing
     event.preventDefault(); 
 
-    //Gather user input values
+    // Capturing the text you typed
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
     var btn = document.getElementById('send-btn');
 
-    //Basic empty field check
+    // Stopping if any box is empty
     if (!name || !email || !message) {
         showStatus('Please fill in all fields.', 'error');
         return;
     }
 
-    //Update button state while sending
+    // Changing the button text during send
     btn.textContent = 'Sending...';
+    // Freezing the button
     btn.disabled = true;
 
-    //Send data to Formspree endpoint
-    fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    // Sending the data to the Formspree server
+    fetch("https://formspree.io/f/xpqbdeok", {
         method: "POST",
         body: JSON.stringify({ name: name, email: email, message: message }),
         headers: { 
@@ -114,29 +127,35 @@ function sendEmail(event) {
         }
     })
     .then(function() {
-        //Success handling and form reset
+        // Confirming success to the user
         showStatus('Message sent! 😊', 'success');
+        // Clearing the text boxes
         document.getElementById('name').value = '';
         document.getElementById('email').value = '';
         document.getElementById('message').value = '';
+        // Resetting the button
         btn.textContent = 'Send Message ✉';
         btn.disabled = false;
     })
     .catch(function() {
-        //Error handling
+        // Handling errors if the send fails
         showStatus('Oops! Something went wrong. Please try again.', 'error');
+        // Resetting the button
         btn.textContent = 'Send Message ✉';
         btn.disabled = false;
     });
 }
 
-//Display success or error messages
+// For showing the success or error message on the screen
 function showStatus(message, type) {
+    // Finding the empty text area for status messages
     var status = document.getElementById('status-msg');
     if (!status) return;
+    // Injecting the specific message text
     status.textContent = message;
+    // Styling the text color
     status.className = 'status-msg ' + type;
 }
 
-//Initialize script once page is loaded
+// Triggering the main function once the browser is ready
 window.addEventListener('load', main);
